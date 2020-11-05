@@ -20,12 +20,15 @@
 				if( data ) { 
 					button.text( 'More posts' ).before(data); 
 					loadajax.current_page++;
- 
-					if ( loadajax.current_page == loadajax.max_page ) 
-						button.remove(); 
+
+					if ( loadajax.current_page == loadajax.max_page ) {
+						button.remove();
+					}
+						 
 
 				} else {
 					button.remove(); 
+				}
 			}
 		});
 	});

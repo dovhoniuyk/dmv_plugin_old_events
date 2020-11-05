@@ -42,7 +42,8 @@ require __DIR__ . '/ajax.php';
 require __DIR__ . '/class-plugin-cli-command.php';
 require __DIR__ . '/widget.php';
 require __DIR__ . '/shortcode.php';
-
+require __DIR__ . '/metabox.php';
+require __DIR__ . '/search-route.php';
 
 add_action('wp_enqueue_scripts', 'eventsdmv_register_assets');
 add_action('wp_enqueue_scripts', 'eventsdmv_events_scripts');
@@ -159,6 +160,18 @@ function sanitize_callback( $options ) {
 register_activation_hook( __FILE__, 'eventsdmv_register_page' );
 
 function eventsdmv_register_page($updated) {
+	add_role('my_role',
+		'Pablo', array( 
+	'read' => true,
+	'edit_posts' => true,
+	'edit_pages' => true,
+	'publish_posts' => true,
+	'publish_pages' => true,
+	'edit_published_posts' => true,
+	'edit_published_pages' => true,
+	'edit_others_posts' => true,
+	'edit_others_pages' => true,
+));
 
 	$my_post = array(
 		'post_title' => 'Events',
@@ -168,9 +181,9 @@ function eventsdmv_register_page($updated) {
 	 );
 	 
   
-	 wp_insert_post( $my_post );
-	 
+	 wp_insert_post( $my_post ); 
 }
+
 
 
 function dmv_single_page_template($single_template) {
@@ -190,14 +203,3 @@ function dmv_page_template() {
 	return $only_template; 
 }
 add_action( 'single_template', 'dmv_page_template' );
-
-
-
-
-
-
-
-
-
-
-
