@@ -1,0 +1,36 @@
+
+
+.hello{
+    color: red;
+    margin-top: 200px;
+ }
+ .post_content {
+     width: 910px;
+	 margin: 0 auto;	 
+ }
+
+.load_more{
+	background-color: #ddd;
+	border-radius: 2px;
+	display: block;
+	text-align: center;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: 800;
+	letter-spacing:1px;
+	cursor:pointer;
+	text-transform: uppercase;
+	padding: 10px 0;
+	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;  
+}
+.load_more:hover{
+	background-color: #767676;
+	color: #fff;
+}
+#eventCalendar {
+	width: 300px;
+	margin: 0 auto;
+}
+a {
+	text-decoration: none !important;
+}
